@@ -12,8 +12,7 @@
 <%= render :partial => 'spree/shared/email/shipment_details', :locals => {:shipment => @shipment} %>
 <% if @shipment.tracking.present? %>
   <p class="tracking">
-    Tracking Information:
-    <%= @shipment.tracking %>
+    Shipped via <%= @shipment.shipping_method.name %> - <%= ups_tracking_link(@shipment.tracking) %>
   </p>
 <% end -%>
 <p class="thank-you">
